@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Simple Telegram Bot MCP Server using FastMCP
 
@@ -27,6 +26,12 @@ def send_telegram_message(text: str) -> str:
         return f"Error sending message: {str(e)}"
 
 app = mcp.http_app()
+
+# Add root route
+@app.route("/")
+async def index(request):
+    return 'Hello, World!'
+
 if __name__ == "__main__":
     # Run the MCP server
     # port = int(sys.argv[1]) if len(sys.argv) > 1 else int(os.getenv('PORT'))
