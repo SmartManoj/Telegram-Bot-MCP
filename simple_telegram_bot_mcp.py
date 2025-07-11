@@ -29,4 +29,4 @@ def send_telegram_message(text: str) -> str:
 if __name__ == "__main__":
     # Run the MCP server
     port = int(sys.argv[1]) if len(sys.argv) > 1 else os.getenv('PORT')
-    mcp.run("streamable-http", port=port) 
+    mcp.run("streamable-http", host='0.0.0.0', port=port) 
