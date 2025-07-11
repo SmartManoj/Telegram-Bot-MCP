@@ -1,9 +1,86 @@
 # Telegram Bot MCP
+[![smithery badge](https://smithery.ai/badge/@SmartManoj/telegram-bot-mcp)](https://smithery.ai/server/@SmartManoj/telegram-bot-mcp)
 
-A sophisticated Telegram bot powered by FastMCP (Model Context Protocol) that enables AI integration and advanced bot functionality.
+A Telegram bot powered by FastMCP (Model Context Protocol) that enables AI integration and bot functionality. Available in both simple and full-featured variants to suit different use cases.
 
-## 🚀 Features
+---
 
+## 📦 Smithery Deployment
+
+You can install this MCP server via [Smithery](https://smithery.ai/server/@SmartManoj/telegram-bot-mcp):
+
+```bash
+npx @smithery/cli install @SmartManoj/telegram-bot-mcp --client claude
+```
+
+# 🚀 Simple Telegram Bot MCP (`simple_telegram_bot_mcp.py`)
+
+**Perfect for basic message sending and simple integrations**
+
+## ✨ Features
+- **Minimal Setup**: Single file with just message sending functionality
+- **FastMCP Server**: Exposes `send_telegram_message` tool via MCP protocol
+- **Lightweight**: Perfect for basic notification needs and simple integrations
+- **Quick Start**: Requires only bot token and chat ID to get started
+- **Streamable HTTP**: Runs on configurable port with streamable HTTP transport
+
+## 📋 Requirements (Simple Version)
+- Python 3.10+
+- Telegram Bot Token (from [@BotFather](https://t.me/botfather))
+- Chat ID where messages will be sent
+
+## 🛠️ Installation (Simple Version)
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/telegram-bot-mcp.git
+   cd telegram-bot-mcp
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   pip install fastmcp python-dotenv requests
+   ```
+
+3. **Set up environment variables**:
+   ```env
+   TELEGRAM_BOT_TOKEN=your_bot_token_here
+   TELEGRAM_CHAT_ID=your_chat_id_here
+   ```
+
+## 🚀 Quick Start (Simple Version)
+
+```bash
+# Run simple MCP server on default port 8001
+python simple_telegram_bot_mcp.py
+
+# Run on custom port
+python simple_telegram_bot_mcp.py 8002
+```
+
+## 🔧 MCP Tool (Simple Version)
+
+The simple bot exposes one MCP tool:
+
+- `send_telegram_message(text: str)`: Send a message to the configured Telegram chat
+
+## 🐳 Docker Usage (Simple Version)
+
+```bash
+# Build image
+docker build -t simple-telegram-bot-mcp .
+
+# Run container
+docker run -e TELEGRAM_BOT_TOKEN=your_token -e TELEGRAM_CHAT_ID=your_chat_id simple-telegram-bot-mcp
+```
+
+---
+
+# 🏢 Full-Featured Telegram Bot MCP (`telegram_bot_mcp.py`)
+
+**Complete solution with advanced features and production capabilities**
+
+## 🚀 Features (Full Version)
 - **FastMCP Integration**: Built with FastMCP framework for seamless AI model integration
 - **Multiple Deployment Modes**: Supports polling, webhook, and combined modes
 - **MCP Tools & Resources**: Expose Telegram functionality as MCP tools and resources
@@ -13,7 +90,7 @@ A sophisticated Telegram bot powered by FastMCP (Model Context Protocol) that en
 - **Comprehensive Logging**: Detailed logging and monitoring capabilities
 - **Flexible Configuration**: Environment-based configuration management
 
-## 📋 Requirements
+## 📋 Requirements (Full Version)
 
 - Python 3.10+
 - Telegram Bot Token (from [@BotFather](https://t.me/botfather))
@@ -197,6 +274,10 @@ COPY . .
 
 CMD ["python", "start.py", "--webhook"]
 ```
+
+Required configuration:
+- `telegramBotToken`: Your Telegram Bot API token from @BotFather
+- `telegramChatId`: The chat ID where messages will be sent
 
 ## 🔍 API Endpoints
 
