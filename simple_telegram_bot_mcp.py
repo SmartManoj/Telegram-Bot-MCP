@@ -6,14 +6,13 @@ This is a minimal MCP server that exposes the send_message function as a tool.
 """
 trigger=2
 import os
-from fastmcp import FastMCP
-from dotenv import load_dotenv
 import sys
-load_dotenv()
+
+import requests
+from fastmcp import FastMCP
 
 token = os.getenv('TELEGRAM_BOT_TOKEN')
 chat_id = os.getenv('TELEGRAM_CHAT_ID')
-import requests
 mcp = FastMCP("Simple Telegram Bot MCP")
 url = f"https://api.telegram.org/bot{token}/sendMessage"
 
@@ -28,6 +27,6 @@ def send_telegram_message(text: str) -> str:
 
 if __name__ == "__main__":
     # Run the MCP server
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else int(os.getenv('PORT'))
+    # port = int(sys.argv[1]) if len(sys.argv) > 1 else int(os.getenv('PORT'))
     # mcp.run("streamable-http", host='0.0.0.0', port=port) 
     mcp.run() 
