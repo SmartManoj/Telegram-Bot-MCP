@@ -3,7 +3,7 @@ Simple Telegram Bot MCP Server using FastMCP
 
 This is a minimal MCP server that exposes the send_message function as a tool.
 """
-trigger=2
+trigger=3
 import os
 import sys
 
