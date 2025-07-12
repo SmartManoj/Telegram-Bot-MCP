@@ -18,7 +18,7 @@ url = f"https://api.telegram.org/bot{token}/sendMessage"
 def send_telegram_message(text: str) -> str:
     """Send a message to a Telegram chat using the simple send_message function"""
     try:
-        # requests.get(url, params={'chat_id': chat_id, 'text': text})
+        requests.get(url, params={'chat_id': chat_id, 'text': text})
         return 'success'
     except Exception as e:
         return f"Error sending message: {str(e)}"
