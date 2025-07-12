@@ -5,7 +5,6 @@ This is a minimal MCP server that exposes the send_message function as a tool.
 """
 trigger=3
 import os
-import sys
 
 import requests
 from fastmcp import FastMCP
