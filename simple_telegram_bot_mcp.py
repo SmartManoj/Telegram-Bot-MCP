@@ -14,7 +14,7 @@ chat_id = os.getenv('TELEGRAM_CHAT_ID')
 mcp = FastMCP("Simple Telegram Bot MCP")
 url = f"https://api.telegram.org/bot{token}/sendMessage"
 
-@mcp.tool()
+@mcp.tool
 def send_telegram_message(text: str) -> str:
     """Send a message to a Telegram chat using the simple send_message function"""
     try:
