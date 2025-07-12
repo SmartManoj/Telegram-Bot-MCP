@@ -7,7 +7,6 @@ trigger=3
 import os
 import sys
 
-import uvicorn
 import requests
 from fastmcp import FastMCP
 
@@ -25,12 +24,12 @@ def send_telegram_message(text: str) -> str:
     except Exception as e:
         return f"Error sending message: {str(e)}"
 
-app = mcp.http_app()
+# app = mcp.http_app()
 
-# Add root route
-@app.route("/")
-async def index(request):
-    return 'Hello, World!'
+# # Add root route
+# @app.route("/")
+# async def index(request):
+#     return 'Hello, World!'
 
 if __name__ == "__main__":
     # Run the MCP server
