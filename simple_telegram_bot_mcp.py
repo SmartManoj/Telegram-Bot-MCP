@@ -32,7 +32,10 @@ def send_telegram_message(text: str) -> str:
 
 if __name__ == "__main__":
     # Run the MCP server
-    # port = int(sys.argv[1]) if len(sys.argv) > 1 else int(os.getenv('PORT'))
-    mcp.run()
-    # mcp.run("streamable-http", host='0.0.0.0', port=port) 
+    import sys
+    port = int(sys.argv[1]) if len(sys.argv) > 1 else int(os.getenv('PORT', '8000'))
+    if 1:
+        mcp.run()
+    else:
+        mcp.run("streamable-http", host='0.0.0.0', port=port) 
     # uvicorn.run('simple_telegram_bot_mcp:app', host='0.0.0.0', port=8000)
