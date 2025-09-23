@@ -42,5 +42,5 @@ if __name__ == "__main__":
     if 0:
         mcp.run('sse')
     else:
-        mcp.run("streamable-http", host='0.0.0.0', port=port) 
+        mcp.run("streamable-http", host='0.0.0.0', port=port, log_level="debug")
     # uvicorn.run('simple_telegram_bot_mcp:app', host='0.0.0.0', port=8000)
