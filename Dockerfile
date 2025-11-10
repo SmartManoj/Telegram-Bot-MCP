@@ -5,7 +5,7 @@ WORKDIR /app
 # Copy project files
 COPY simple_telegram_bot_mcp.py ./
 # Install dependencies
-RUN pip install requests fastmcp
+RUN pip install requests fastmcp uvicorn
 # Ensure logging flushes immediately
 ENV PYTHONUNBUFFERED=1
 ENTRYPOINT ["python", "simple_telegram_bot_mcp.py"] 
