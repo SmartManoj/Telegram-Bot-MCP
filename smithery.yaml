@@ -3,11 +3,7 @@ build:
   dockerfile: "Dockerfile"           # Path to your Dockerfile
   dockerBuildPath: "."               # Docker build context
 startCommand:
-  type: stdio
-  commandFunction:
-    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
-    |-
-    (config)=>({command:'python',args:['simple_telegram_bot_mcp.py'],env:{TELEGRAM_BOT_TOKEN:config.telegramBotToken,TELEGRAM_CHAT_ID:config.telegramChatId}})
+  type: "http"
   configSchema:
     # JSON Schema defining the configuration options for the MCP.
     type: object
