@@ -394,4 +394,4 @@ This project is licensed under the MIT License. See LICENSE file for details.
 
 ---
 
-**Built with ❤️ using FastMCP and Python** 
+**Built with ❤️ using FastMCP and Python**
