@@ -14,8 +14,8 @@ from smithery.decorators import smithery
 
 # Session-level configuration schema
 class ConfigSchema(BaseModel):
-    telegram_bot_token: str = Field(..., description="Your Telegram Bot Token from @BotFather")
-    telegram_chat_id: str = Field(..., description="Your Telegram Chat ID")
+    telegram_bot_token: str = Field('1234567890:ABCDEFghijklmnopqrstuvwxyz123456789', description="Your Telegram Bot Token from @BotFather")
+    telegram_chat_id: str = Field('123456789', description="Your Telegram Chat ID")
 
 
 @smithery.server(config_schema=ConfigSchema)
