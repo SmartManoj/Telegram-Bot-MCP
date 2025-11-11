@@ -1,0 +1,29 @@
+[build-system]
+requires = ["uv_build>=0.8.15,<0.9.0"]
+build-backend = "uv_build"
+
+[project]
+name = "telegram-bot-mcp"
+version = "0.1.0"
+description = "A Telegram Bot MCP server for sending messages via Telegram Bot API"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.15.0",
+    "smithery>=0.4.2",
+    "requests>=2.31.0",
+    "pydantic>=2.5.0",
+]
+
+[project.scripts]
+dev = "smithery.cli.dev:main" # Run the MCP server in development mode
+start = "smithery.cli.start:main" # Run the MCP server in production mode
+playground = "smithery.cli.playground:main" # Run server with interactive testing playground
+
+[tool.smithery]
+server = "simple_telegram_bot_mcp_v2:create_server" # Function that returns a patched FastMCP server
+log_level = "warning" # Production log level (optional, defaults to "warning")
+

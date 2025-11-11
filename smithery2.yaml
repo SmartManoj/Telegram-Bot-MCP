@@ -1,0 +1,22 @@
+runtime: "container"
+build:
+  dockerfile: "Dockerfile"           # Path to your Dockerfile
+  dockerBuildPath: "."               # Docker build context
+startCommand:
+  type: "http"
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - telegramBotToken
+      - telegramChatId
+    properties:
+      telegramBotToken:
+        type: string
+        description: Telegram Bot API token from @BotFather
+      telegramChatId:
+        type: string
+        description: Telegram chat ID where messages will be sent
+  exampleConfig:
+    telegramBotToken: "1234567890:ABCDEFghijklmnopqrstuvwxyz123456789"
+    telegramChatId: "123456789" 
