@@ -24,6 +24,6 @@ start = "smithery.cli.start:main" # Run the MCP server in production mode
 playground = "smithery.cli.playground:main" # Run server with interactive testing playground
 
 [tool.smithery]
-server = "simple_telegram_bot_mcp_v2:create_server" # Function that returns a patched FastMCP server
+server = "telegram_bot_mcp.server:create_server" # Function that returns a patched FastMCP server
 log_level = "warning" # Production log level (optional, defaults to "warning")
 
